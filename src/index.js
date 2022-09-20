@@ -3,10 +3,12 @@ import myName from './myName';
 import {drinkOne, drinkDislike} from './drinks';
 import './style.css';
 import Icon from './images/megaphone.png';
+import printMe from './print';
 
 
 function component() {
     const element = document.createElement('div');
+    const btn = document.createElement('button');
 
     element.innerHTML= _.join(['Hello', 'webpack'], ' ');
     element.textContent = myName('Hen6!');
@@ -14,6 +16,9 @@ function component() {
     megap.classList.add("megaphone");
     megap.src = Icon;
     element.appendChild(megap);
+    btn.innerHTML = "Click me and check the console!";
+    btn.onclick = printMe;
+    element.appendChild(btn);
 
 
     return element;
